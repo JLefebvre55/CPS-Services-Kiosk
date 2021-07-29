@@ -1,5 +1,30 @@
-# CPS Services Kiosk
+# CPS Services Kiosk <!-- omit in toc -->
 Kiosk web portal for all the civilian-facing services offered by the Cobourg Police Services.
+
+### Table of Contents <!-- omit in toc -->
+- [Development](#development)
+  - [Testing](#testing)
+  - [Production](#production)
+  - [Architecture](#architecture)
+    - [Webpage](#webpage)
+    - [Backend](#backend)
+  - [Services](#services)
+    - [Criminal Record Checks](#criminal-record-checks)
+    - [Vulnerable Sector Check](#vulnerable-sector-check)
+    - [Youth Record Check](#youth-record-check)
+    - [Freedom of Information Report](#freedom-of-information-report)
+    - [Report Request](#report-request)
+    - [Motor Vehicle Collision](#motor-vehicle-collision)
+    - [Change of Address Notification](#change-of-address-notification)
+    - [Civilian Fingerprints](#civilian-fingerprints)
+    - [Record Suspension](#record-suspension)
+    - [Picking Up a Report, Police Check, or Property](#picking-up-a-report-police-check-or-property)
+    - [Making a Report](#making-a-report)
+    - [Filing a Trespass Notice](#filing-a-trespass-notice)
+    - [Wanderers List](#wanderers-list)
+    - [**Paying a Parking Ticket**](#paying-a-parking-ticket)
+    - [Not Listed?](#not-listed)
+- [Identification](#identification)
 
 ## Architecture
 
@@ -17,6 +42,24 @@ Serverless hosting via Firebase.
 
 1. Database with a table of forms with their checklists
 2. Webapp hosting
+
+## Development
+
+### Local Development
+
+Run a local development server.
+
+1. Execute `npm start`
+
+### Emulated Deployment and Testing
+
+Test deployment functionality by using Firebase's emulators.
+
+1. Execute `firebase emulators:start`
+
+### Deployment
+
+Deploy to Firebase hosting.
 
 ## Services
 
