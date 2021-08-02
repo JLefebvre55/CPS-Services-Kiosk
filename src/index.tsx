@@ -29,7 +29,7 @@ if (window.location.hostname === 'localhost') {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App message = 'Prop test'/>
+    <App message = 'Coming Soon'/>
   </React.StrictMode>,
   document.getElementById('root')
 );
