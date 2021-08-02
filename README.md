@@ -30,7 +30,7 @@ Kiosk web portal for all the civilian-facing services offered by the Cobourg Pol
 
 ### Webpage
 
-React framework single-page webapp.
+Single-page webapp. Built with React (TypeScript), MaterialUI and Redux for state management.
 
 1. Landing page (form selection)
 2. Checklist page (prerequisites, parameterized checklist generation)
@@ -43,23 +43,23 @@ Serverless hosting via Firebase.
 1. Database with a table of forms with their checklists
 2. Webapp hosting
 
+## Resources
+
+- [Setting Up React w/ Firebase](https://www.youtube.com/watch?v=mwNATxfUsgI)
+- [Full Tutorial](https://www.youtube.com/watch?v=m_u6P5k0vP0)
+- [React w/ TypeScript Example](https://www.typescriptlang.org/play?jsx=2&esModuleInterop=true&e=196#example/typescript-with-react)
+- [React TypeScript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/)
+
 ## Development
 
 ### Local Development
 
-Run a local development server.
-
-1. Execute `npm start`
-
-### Emulated Deployment and Testing
-
-Test deployment functionality by using Firebase's emulators.
-
-1. Execute `firebase emulators:start`
+1. Start the Firebase local emulators with `npm run emulate`.
+2. In a separate terminal, start the development server with `npm start`.
 
 ### Deployment
 
-Deploy to Firebase hosting.
+1. Execute `npm run deploy` to compile an optimized  build and deploy to Firebase Hosting.
 
 ## Services
 
