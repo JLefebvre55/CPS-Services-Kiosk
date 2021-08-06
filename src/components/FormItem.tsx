@@ -11,9 +11,14 @@ const useStyles = makeStyles((theme: Theme) =>
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
+        maxWidth: '18vw',
+        minWidth: '200px'
     },
     title: {
         flexGrow: 1
+    },
+    contentbox: {
+        padding: '.5em'
     }
   }),
 );
@@ -30,16 +35,18 @@ export default function FormItem(props: FormItemProps) {
     const classes = useStyles();
     return (
         <Paper className={classes.paper}>
-            <img src={props.item.imageurl} alt="" />
+            <Box className={classes.contentbox}>
+                <img src={props.item.imageurl} alt="" />
+            </Box>
             <Typography variant="h6" className={classes.title}>
                 {props.item.title}
             </Typography>
-            <Box padding="1em" minWidth="12em" maxWidth="18em">
+            <Box className={classes.contentbox}>
                 <Typography variant="body2">
                     {props.item.content}
                 </Typography>
             </Box>
-            <Box padding="1em">
+            <Box className={classes.contentbox}>
                 <Button variant="contained" color="primary">
                     Select
                 </Button>
