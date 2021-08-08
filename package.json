@@ -25,7 +25,7 @@
     "start": "react-scripts start",
     "buildfunctions": "pushd functions > /dev/null; npm run build; popd > /dev/null",
     "emulate": "npm run buildfunctions; firebase emulators:start --only firestore,functions,auth,storage",
-    "build": "react-scripts build",
+    "build": "npm i && react-scripts build",
     "test": "npm run emulate; react-scripts test",
     "eject": "react-scripts eject"
   },
