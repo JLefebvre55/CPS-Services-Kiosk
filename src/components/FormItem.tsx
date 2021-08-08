@@ -36,7 +36,7 @@ export default function FormItem(props: FormItemProps) {
     return (
         <Paper className={classes.paper}>
             <Box className={classes.contentbox}>
-                <img src={props.item.imageurl} alt="" />
+                <img src={props.item.imageurl} style={{maxWidth: '100%', maxHeight: '100%'}} alt="" />
             </Box>
             <Typography variant="h6" className={classes.title}>
                 {props.item.title}

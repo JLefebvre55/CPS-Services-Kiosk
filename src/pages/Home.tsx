@@ -3,7 +3,6 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 // Components
 import FormGrid from '../components/FormGrid';
-import { FormItemProps } from '../components/FormItem';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -24,7 +23,7 @@ export default function Home () {
     }
     return (
         <Box className={classes.root}>
-            <FormGrid items={items as [FormItemProps]} />
+            <FormGrid />
         </Box>
     )
 }
