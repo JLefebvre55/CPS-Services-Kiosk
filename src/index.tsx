@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './components/App';
-// import reportWebVitals from './utils/reportWebVitals';
+import App from './App';
 import firebase from 'firebase/app';
 import 'firebase/functions';
 
@@ -20,21 +18,12 @@ firebase.initializeApp(firebaseConfig);
 
 // Local emulator setup
 if (window.location.hostname === 'localhost') {
-  
-  // db.useEmulator('localhost', 8080);
-  // auth.useEmulator('http://localhost:9099/', { disableWarnings: true });
   firebase.functions().useEmulator('localhost', 5001);
-  // storage.useEmulator('localhost', 9199);
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    <App message = 'Coming Soon'/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
