@@ -17,8 +17,23 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
         flexGrow: 1
     },
-    contentbox: {
+    buttonbox: {
         padding: '.5em'
+    },
+    textbox: {
+        padding: '.5em',
+        minHeight: '3em',
+        maxHeight: '3em',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    imagebox: {
+        padding: '1em',
+    },
+    image: {
+        maxWidth: '70%', 
+        maxHeight: '70%'
     }
   }),
 );
@@ -35,18 +50,18 @@ export default function FormItem(props: FormItemProps) {
     const classes = useStyles();
     return (
         <Paper className={classes.paper}>
-            <Box className={classes.contentbox}>
-                <img src={props.item.imageurl} style={{maxWidth: '100%', maxHeight: '100%'}} alt="" />
+            <Box className={classes.imagebox}>
+                <img src={props.item.imageurl} className={classes.image} alt="" />
             </Box>
             <Typography variant="h6" className={classes.title}>
                 {props.item.title}
             </Typography>
-            <Box className={classes.contentbox}>
+            <Box className={classes.textbox}>
                 <Typography variant="body2">
                     {props.item.content}
                 </Typography>
             </Box>
-            <Box className={classes.contentbox}>
+            <Box className={classes.buttonbox}>
                 <Button variant="contained" color="primary">
                     Select
                 </Button>
