@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
         flexGrow: 1,
         maxWidth: '90vw',
         justifyContent: "center",
+        marginTop: '5vh'
     }
   }),
 );

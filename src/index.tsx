@@ -17,9 +17,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Local emulator setup
-if (window.location.hostname === 'localhost') {
-  firebase.functions().useEmulator('localhost', 5001);
-}
+// if (window.location.hostname === 'localhost') {
+  // firebase.functions().useEmulator('localhost', 5001);
+// }
 
 ReactDOM.render(
   <React.StrictMode>
