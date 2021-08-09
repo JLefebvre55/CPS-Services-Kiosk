@@ -1,5 +1,6 @@
 import { useEffect, useState, FunctionComponent } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { CircularProgress } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import firebase from 'firebase/app';
 import "firebase/functions";
@@ -21,7 +22,7 @@ export type FormGridProps = {
     items?: [FormItemProps]
 };
 
-const FormGrid : FunctionComponent<FormGridProps> = (props) => {
+const FormGrid : FunctionComponent<FormGridProps> = (props = {items: undefined}) => {
     const [gridData, setGridData] = useState(props.items);
     useEffect(() => {
         // const helloWorld = firebase.functions().httpsCallable('helloWorld');
@@ -36,7 +37,7 @@ const FormGrid : FunctionComponent<FormGridProps> = (props) => {
     const classes = useStyles();
     return (
         <Grid container spacing={3} className={classes.root}>
-            {gridData?.map(item => {
+            {gridData === undefined ? (<CircularProgress/>) : gridData.map(item => {
                 return (<Grid item><FormItem item={item.item}/></Grid>);
             })}
         </Grid>

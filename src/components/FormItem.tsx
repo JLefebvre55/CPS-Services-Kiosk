@@ -49,7 +49,7 @@ export type FormItemProps = {
 export default function FormItem(props: FormItemProps) {
     const classes = useStyles();
     return (
-        <Paper className={classes.paper}>
+        <Paper className={classes.paper} elevation={5}>
             <Box className={classes.imagebox}>
                 <img src={props.item.imageurl} className={classes.image} alt="" />
             </Box>
