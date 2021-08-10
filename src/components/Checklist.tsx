@@ -99,6 +99,7 @@ export default function Checklist(props: ChecklistProps) {
     return (
         <div>
             <Dialog onClose={props.handleClose} aria-labelledby="customized-dialog-title" open={props.openState}>
+            {props.checklist.length > 0 ? (
             <Box className={classes.checklistbox}>
                 <DialogTitle id="customized-dialog-title" onClose={props.handleClose}>
                     Pre-Flight Checklist
@@ -116,12 +117,13 @@ export default function Checklist(props: ChecklistProps) {
                         <FormHelperText>You can display an error</FormHelperText>
                     </FormControl>
                 </DialogContent>
+                </Box>
+                ) : ''}
                 <DialogActions>
                     <Button autoFocus onClick={props.handleClose} color="primary" disabled={error}>
                     Proceed to Front Counter
                     </Button>
                 </DialogActions>
-                </Box>
             </Dialog>
         </div>
     )
