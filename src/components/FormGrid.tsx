@@ -12,8 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
         flexGrow: 1,
         maxWidth: '90vw',
-        justifyContent: "center",
-        marginTop: '5vh'
+        justifyContent: "center"
     }
   }),
 );

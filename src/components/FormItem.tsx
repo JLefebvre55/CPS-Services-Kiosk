@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textbox: {
         padding: '.5em',
-        minHeight: '3em',
-        maxHeight: '3em',
+        minHeight: '3.5em',
+        maxHeight: '3.5em',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
