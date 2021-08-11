@@ -102,7 +102,7 @@ export default function Checklist(props: ChecklistProps) {
             {props.checklist.length > 0 ? (
             <Box className={classes.checklistbox}>
                 <DialogTitle id="customized-dialog-title" onClose={props.handleClose}>
-                    Pre-Flight Checklist
+                    Service Checklist
                 </DialogTitle>
                 <DialogContent dividers>
                     <FormControl required error={error} component="fieldset" className={classes.formControl}>
