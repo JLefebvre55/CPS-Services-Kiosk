@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme: Theme) =>
     formControl: {
         margin: theme.spacing(3),
     },
+    titlebox: {
+        fontWeight: "bold"
+    }
   }),
 );
 
@@ -73,7 +76,9 @@ export default function FormItem(props: FormItemProps) {
                 <img src={props.item.imageurl} className={classes.image} alt="" />
             </Box>
             <Typography variant="h6" className={classes.title}>
-                {props.item.title}
+                <Box className={classes.titlebox}>
+                    {props.item.title}
+                </Box>
             </Typography>
             <Box className={classes.textbox}>
                 <Typography variant="body2">
