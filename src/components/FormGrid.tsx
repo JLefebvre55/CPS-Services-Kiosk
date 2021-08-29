@@ -10,9 +10,10 @@ import FormItem, { FormItemProps } from './FormItem';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-        flexGrow: 1,
-        maxWidth: '90vw',
-        justifyContent: "center"
+        width: '100vw',
+        paddingLeft: '10%',
+        paddingRight: '10%',
+        justifyContent: 'center'
     }
   }),
 );
@@ -28,7 +29,7 @@ const FormGrid : FunctionComponent<FormGridProps> = (props = {items: undefined})
         // helloWorld().then(value => {console.log(value.data)}).catch(console.log);
         const getAllForms = firebase.functions().httpsCallable('getAllForms');
         getAllForms().then(forms => {
-            setGridData(forms.data.map(form=>{
+            setGridData(forms.data.map((form: any) =>{
                 return {item: form};
             }));
         })
@@ -37,7 +38,7 @@ const FormGrid : FunctionComponent<FormGridProps> = (props = {items: undefined})
     return (
         <Grid container spacing={3} className={classes.root}>
             {gridData === undefined ? (<CircularProgress/>) : gridData.map(item => {
-                return (<Grid item><FormItem item={item.item}/></Grid>);
+                return <FormItem item={item.item}/>;
             })}
         </Grid>
     );

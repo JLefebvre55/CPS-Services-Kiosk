@@ -3,17 +3,21 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { Button, Box } from '@material-ui/core';
 import { useState } from 'react';
+import Grid from '@material-ui/core/Grid';
 
 import Checklist from './Checklist';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
-        padding: theme.spacing(2),
+        display: 'flex',
+        flexDirection: 'column',
         textAlign: 'center',
+        padding: theme.spacing(3),
         color: theme.palette.text.secondary,
-        maxWidth: '18vw',
-        minWidth: '200px'
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '20em'
     },
     title: {
         flexGrow: 1
@@ -21,13 +25,14 @@ const useStyles = makeStyles((theme: Theme) =>
     buttonbox: {
         padding: '.5em'
     },
-    textbox: {
+    contentbox: {
         padding: '.5em',
-        minHeight: '3.5em',
-        maxHeight: '3.5em',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    bodybox: {
+        height: '8em',
     },
     imagebox: {
         padding: '1em',
@@ -53,7 +58,8 @@ export type FormItemProps = {
         title: string,
         content: string,
         imageurl: string,
-        checklist: [string]
+        checklist: string[],
+        buttontext?: string
     }
 }
 
@@ -70,20 +76,23 @@ export default function FormItem(props: FormItemProps) {
         setOpen(false);
     };
 
-    return (<div>
+    return (
+    <Grid item xs={12} sm={6} md={3}>
         <Paper className={classes.paper} elevation={5}>
             <Box className={classes.imagebox}>
                 <img src={props.item.imageurl} className={classes.image} alt="" />
             </Box>
-            <Typography variant="h6" className={classes.title}>
+            <Box className={classes.bodybox}>
                 <Box className={classes.titlebox}>
-                    {props.item.title}
+                    <Typography variant="h6" className={classes.title}>
+                        {props.item.title}
+                    </Typography>
                 </Box>
-            </Typography>
-            <Box className={classes.textbox}>
-                <Typography variant="body2">
-                    {props.item.content}
-                </Typography>
+                <Box className={classes.contentbox}>
+                    <Typography variant="body2">
+                        {props.item.content}
+                    </Typography>
+                </Box>
             </Box>
             <Box className={classes.buttonbox}>
                 <Button variant="contained" color="primary" onClick={handleClickOpen}>
@@ -91,6 +100,6 @@ export default function FormItem(props: FormItemProps) {
                 </Button>
             </Box>
         </Paper>
-        <Checklist checklist={props.item.checklist} openState={open} handleClose={handleClose} />
-    </div>)
+        <Checklist checklist={props.item.checklist} openState={open} handleClose={handleClose} buttonText={props.item.buttontext}/>
+    </Grid>)
 }
