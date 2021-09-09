@@ -1,5 +1,5 @@
 # CPS Services Kiosk <!-- omit in toc -->
-Kiosk web portal for all the civilian-facing services offered by the Cobourg Police Services.
+Kiosk web portal for all the civilian-facing services offered by the Cobourg Police Services. Built as part of my internship with the Venture13 Policetech Accelerator.
 
 ## Table of Contents <!-- omit in toc -->
 
